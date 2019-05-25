@@ -5,83 +5,53 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Kinopoisk-test</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
           integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-<header>
-    <h1>Калькулятор затрат</h1>
-</header>
-<form>
-<div class="container shadow p-3 mb-5 bg-white rounded">
-    <div class="row justify-content-md-center">
-            <div class="input-group mb-3 w-50">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Введите</span>
-                </div>
-                <input type="text" class="form-control" id="goods-name" placeholder="Наименование покупки"
-                       aria-label="Наименование покупки" name="goodsname" autofocus>
-            </div>
+<main>
+    <div class="container shadow p-2 mb-2 bg-white">
+        <div class="btn-group btn-group-toggle mb-2 shadow" data-toggle="buttons">
+            <label class="btn btn-secondary btn-md">
+                <input type="radio" name="options" id="readTab" autocomplete="off">Прочитать
+            </label>
+            <label class="btn btn-secondary btn-md">
+                <input type="radio" name="options" id="archiveTab" autocomplete="off">Прочитано
+            </label>
+            <label class="btn btn-secondary btn-md">
+                <input type="radio" name="options" id="searchTab" autocomplete="off">Поиск
+            </label>
+        </div>
 
-            <div class="input-group mb-3 w-50">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">₽</span>
-                </div>
-                <input type="number" class="form-control" id="goods-price" placeholder="Стоимость покупки"
-                       aria-label="Стоимость покупки" name="goodsprice">
-                <div class="input-group-append">
-                    <span class="input-group-text">.00</span>
-                </div>
-            </div>
+        <form class="d-none justify-content-between my-2" id="link-add-form">
+            <input class="shadow p-1 mb-1 mr-2 form-control" type="text" id="link-name" placeholder="Название ссылки"
+                   name="linkName">
+            <input class="shadow p-1 mb-1 mr-2 form-control" type="text" id="link-tags" placeholder="#тег1#тег2..."
+                   name="linkTags">
+            <input class="shadow p-1 mb-1 mr-2 form-control" type="text" id="link-url" placeholder="http://..."
+                   name="linkUrl">
+            <button type="submit" class="w-50 shadow mb-1 mr-5 btn btn-primary btn-sm btn-block" id="link-add-btn">
+                Добавить
+            </button>
+        </form>
 
-            <p class="shadow p-3 mb-5 bg-white rounded">
-                <button type="submit" class="btn btn-primary btn-lg btn-block" id="goods-add-btn">Добавить в мои
-                    покупки
-                </button>
-            </p>
+        <form class="d-none justify-content-start w-75 my-2" id="search-form">
+            <input class="shadow p-1 mb-1 mr-2 w-50 form-control" type="text" id="search-name"
+                   placeholder="Что искать?"
+                   name="searchName">
+            <button type="submit" class="shadow p-1 mb-1 mr-2 w-25 btn btn-primary btn-sm btn-block" id="search-btn">
+                Найти
+            </button>
+        </form>
 
-
-        <table class="table table-bordered shadow p-3 mb-5 bg-white rounded">
-            <thead>
-            <tr>
-                <th class="bg-light" scope="col">Кол-во покупок</th>
-                <th class="bg-light" scope="col">Название самой дорогой покупки</th>
-                <th class="bg-light" scope="col">Стоимость самой дорогой покупки</th>
-                <th class="bg-light" scope="col">Общая стоимость всех покупок</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td><span id="purchases-quantity"></span></td>
-                <td><span id="most-expensive-purchase-name"></span></td>
-                <td><span id="most-expensive-purchase-price"></span></td>
-                <td><span id="total-cost"></span></td>
-            </tr>
-            </tbody>
-        </table>
-        <br>
-        <ul class="list-group shadow p-3 mb-5 bg-white rounded">
-            <li class="list-group-item bg-light">Список покупок
-                <ol id="purchases-list"></ol>
-            </li>
+        <ul class="list-group mr-5 my-4" id="list-items">
         </ul>
     </div>
-</div>
-</form>
-
+</main>
 
 <script src="js/lib.js" type="module"></script>
 <script src="js/app.js" type="module"></script>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
-        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
-        crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
-        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
-        crossorigin="anonymous"></script>
 </body>
 </html>

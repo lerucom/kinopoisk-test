@@ -1,0 +1,19 @@
+header {
+    text-align: center;
+}
+
+.error input {
+    border: 2px solid red;
+}
+
+ul {
+    width: 100%;
+}
+
+p {
+    width: 100%;
+}
+
+[data-id="remove"] {
+    font-weight: bold;
+}
